@@ -2,6 +2,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import { Col, Row } from 'antd';
 import { Header } from 'components/segmented/style';
 import React from 'react';
+import { list } from './list';
 import { CardComp } from './styled';
 
 export default function OverSectionComponent() {
@@ -34,7 +35,24 @@ export default function OverSectionComponent() {
         </div>
       </Col>
       <Col span={24} md={12}>
-        <CardComp></CardComp>
+        <CardComp>
+          {list?.map((item, index) => (
+            <Row
+              className="link"
+              key={index}
+              gutter={[16, 16]}
+              align="middle"
+              justify="space-between"
+            >
+              <Col>
+                <a href={item.link}>{item.name}</a>
+              </Col>
+              <Col>
+                <img src={item.img} alt={item.name} />
+              </Col>
+            </Row>
+          ))}
+        </CardComp>
       </Col>
     </Row>
   );

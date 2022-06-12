@@ -82,13 +82,8 @@ export function Sidebar({ children }) {
             {children}
           </div>
         </Content>
-        <Footer
-          style={{
-            textAlign: 'center',
-          }}
-        >
-          Tashkent ©2022 Created by Azamov
-        </Footer>
+        <br />
+        <br />
       </Layout>
     </Layout>
   );
