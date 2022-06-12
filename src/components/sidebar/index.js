@@ -101,7 +101,12 @@ export function Sidebar({ children }) {
           // console.log(collapsed, type);
         }}
       >
-        <LogoSite effect="blur" width={200} src={KNU} />
+        <LogoSite
+          effect="blur"
+          onClick={() => navigate('/')}
+          width={200}
+          src={KNU}
+        />
         <Menu theme="light" onClick={onClick} mode="vertical" items={items} />
       </Sider>
       <Layout>
