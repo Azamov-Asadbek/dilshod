@@ -14,12 +14,12 @@ export default function ItemComponent({ item }) {
         </Col>
         <Col span={20}>
           <div>
-            <a href="#" className="link1">
+            <a href={item?.link} className="link1">
               {item?.title}
             </a>
           </div>
           <div>
-            <a href="#" className="link2">
+            <a href={item?.link} className="link2">
               {item?.subtitle}
             </a>
           </div>
