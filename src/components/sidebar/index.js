@@ -4,6 +4,7 @@ import { Layout, Menu } from 'antd';
 import { LogoSite } from './style';
 
 import KNU from 'assets/logos/home-logo.png';
+import { useNavigate } from 'react-router-dom';
 const { Content, Footer, Sider } = Layout;
 
 export function Sidebar({ children }) {
@@ -17,37 +18,69 @@ export function Sidebar({ children }) {
     };
   }
 
+  const navigate = useNavigate();
+
   const items = [
     getItem('학과소개', 'sub1', null, [
-      getItem('인사말', '11'),
-      getItem('학과연혁', '12'),
-      getItem('학과소개', '13'),
-      getItem('실습실소개', '14'),
-      getItem('동아리소개', '15'),
-      getItem('학생회소개', '16'),
-      getItem('오시는 길', '17'),
+      getItem('인사말', 'https://aisw.kangwon.ac.kr/aisw/intro/greetings.do'),
+      getItem('학과연혁', 'https://aisw.kangwon.ac.kr/aisw/intro/history04.do'),
+      getItem('학과소개', 'https://aisw.kangwon.ac.kr/aisw/intro/intro.do'),
+      getItem('실습실소개', 'https://aisw.kangwon.ac.kr/aisw/intro/lab.do'),
+      getItem('동아리소개', 'https://aisw.kangwon.ac.kr/aisw/intro/circle.do'),
+      getItem('학생회소개', 'https://aisw.kangwon.ac.kr/aisw/intro/council.do'),
+      getItem('오시는 길', 'https://aisw.kangwon.ac.kr/aisw/intro/location.do'),
     ]),
     getItem('교수소개', 'sub2', null, [
-      getItem('교수', '21'),
-      getItem('명예교수', '22'),
+      getItem('교수', '/professors'),
+      getItem(
+        '명예교수',
+        'https://aisw.kangwon.ac.kr/aisw/professor/emeritus-professor.do'
+      ),
     ]),
     getItem('학사안내', 'sub3', null, [
-      getItem('학사공지', '31'),
-      getItem('교육과정', '32'),
-      getItem('편성교과목', '33'),
-      getItem('학사정보', '34'),
-      getItem('학사일정', '35'),
+      getItem(
+        '학사공지',
+        'https://www.kangwon.ac.kr/www/selectBbsNttList.do?bbsNo=37&key=1176&)'
+      ),
+      getItem(
+        '교육과정',
+        'https://aisw.kangwon.ac.kr/aisw/bachelor/curriculum.do'
+      ),
+      getItem(
+        '편성교과목',
+        'https://aisw.kangwon.ac.kr/aisw/bachelor/subject.do'
+      ),
+      getItem('학사정보', 'https://aisw.kangwon.ac.kr/aisw/bachelor/info.do'),
+      getItem(
+        '학사일정',
+        'https://aisw.kangwon.ac.kr/aisw/bachelor/calendar.do'
+      ),
     ]),
-    getItem('입학안내', 'sub4', null, [getItem('모집요강', '41')]),
+    getItem('입학안내', 'sub4', null, [
+      getItem(
+        '모집요강',
+        'https://aisw.kangwon.ac.kr/aisw/admission/admission-guide.do'
+      ),
+    ]),
     getItem('커뮤니티', 'sub5', null, [
-      getItem('공지사항', '51'),
-      getItem('갤러리', '52'),
-      getItem('서식자료실', '53'),
+      getItem(
+        '공지사항',
+        'https://aisw.kangwon.ac.kr/aisw/community/notice.do'
+      ),
+      getItem('갤러리', 'https://aisw.kangwon.ac.kr/aisw/community/gallery.do'),
+      getItem(
+        '서식자료실',
+        'https://aisw.kangwon.ac.kr/aisw/community/reference-room.do'
+      ),
     ]),
   ];
 
   const onClick = (e) => {
-    console.log('click', e);
+    if (e?.key === '/professors') {
+      navigate('/professors');
+    } else {
+      window.location.href = e.key;
+    }
   };
 
   return (

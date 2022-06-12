@@ -44,12 +44,12 @@ export default function SegmentedComponent() {
       <Body>
         <Row align="middle" gutter={[32, 32]} justify="space-between">
           <Col span={24} md={12}>
-            {HomeItems?.slice(0, 4).map((item, index) => (
+            {HomeItems?.slice(0, 3).map((item, index) => (
               <ItemComponent key={index} item={item} />
             ))}
           </Col>
           <Col span={24} md={12}>
-            {HomeItems?.slice(4).map((item, index) => (
+            {HomeItems?.slice(3).map((item, index) => (
               <ItemComponent key={index} item={item} />
             ))}
           </Col>
