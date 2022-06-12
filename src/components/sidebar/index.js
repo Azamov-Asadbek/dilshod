@@ -86,6 +86,11 @@ export function Sidebar({ children }) {
   return (
     <Layout>
       <Sider
+        style={{
+          boxShadow: '0 2px 15px rgb(0 0 0 / 20%)',
+          minHeight: '100vh',
+          border: '1px solid #e9e9e9',
+        }}
         theme="light"
         breakpoint="lg"
         collapsedWidth="0"
@@ -109,6 +114,7 @@ export function Sidebar({ children }) {
             className="site-layout-background"
             style={{
               padding: 0,
+              backgroundColor: '#fff',
               minHeight: '84vh',
             }}
           >
